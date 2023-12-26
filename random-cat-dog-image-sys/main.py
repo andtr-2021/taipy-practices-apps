@@ -17,6 +17,11 @@ page = """
 
 <|New Image|button|on_action=new_button_action|>
 
+<br></br>
+
+<p>Click here to download the image if you want.</p>
+
+<|{content}|file_download|label=Download File|>
 """
 
 def new_button_action(state):
