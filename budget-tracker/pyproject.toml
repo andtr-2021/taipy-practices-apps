@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "budget_tracker"
+version = "0.1.0"
+description = ""
+authors = ["Duc Le <dealoux@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+taipy = "^3.0.0"
+taipy-gui = "^3.0.0"
+pandas = "^2.1.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
