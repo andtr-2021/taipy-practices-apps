@@ -36,10 +36,10 @@ information_md="""
 ## Your information
 
 Budget
-<|{budget}|input|>
+<|{budget}|number|>
 
 Income
-<|{income}|input|>
+<|{income}|number|>
 """
 
  
@@ -49,7 +49,7 @@ spending_md="""
 ## Your spending information
 
 Value
-<|{value}|input|>
+<|{value}|number|>
 
 Type
 # <|{category}|selector|lov={categories}|dropdown|>
@@ -63,7 +63,7 @@ def on_confirm_button_action(state):
         notify(state, 'error', f'Please insert a value')
         return
         
-    new_spending = Spending(len(spendings), value, category)
+    new_spending = Spending(len(spendings), state.value, state.category)
     spendings.append(new_spending)
     # Update JSON file
     with open(json_file_path, "w") as file:
@@ -74,9 +74,15 @@ def on_confirm_button_action(state):
 dataframe = pd.DataFrame.from_records([vars(spending) for spending in spendings])
 details_md="""
 ## Spending details
+<|{dataframe}|table|>
 <|{dataframe}|chart|type=pie|values=value|labels=category|>
 """
 
+# def on_change(state, var, val):
+#     if var == "value":
+#         state.value = val
+#     elif var == "category":
+#         state.category = val
 
 def on_menu(state, action, info):
     page = info["args"][0]
