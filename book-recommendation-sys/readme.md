@@ -1,5 +1,14 @@
-# Book Recommendation System
+1. Install dependencies
+```bash
+poetry install
+```
 
-Description: 
+2. Run (MacOS)
+```bash
+poetry run main.py
+```
 
-Book Recommendation: Create a web app that suggests book recommendations based on user preferences and genres. Users can input their favorite books or genres, and the app provides personalized recommendations.
+2. Run (Windows)
+```bash
+poetry run python main.py
+```

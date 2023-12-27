@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "book-recommendation-sys"
+version = "0.1.0"
+description = ""
+authors = ["An Do", "Duc Le"]
+readme = "README.md"
+packages = [{include = "book_recommendation_sys", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+taipy = "^3.0.0"
+pandas = "^2.1.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
