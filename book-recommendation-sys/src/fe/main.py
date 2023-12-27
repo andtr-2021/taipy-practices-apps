@@ -11,7 +11,7 @@ root_md="<|menu|label=Menu|lov={[('collection', 'collection'), ('books_list', 'b
 find_filters = ["Title", "isbn", "isbn13"]
 
 class Book:
-    def __init__(self, id, book_id, isbn, isbn13):
+    def __init__(self, id, book_id, isbn: str, isbn13: str):
         self.id, self.book_id, self.isbn, self.isbn13 = (id, book_id, isbn, isbn13)
 
 # Check if the JSON file exists and create it if it doesn't
@@ -26,7 +26,7 @@ def load_user_datas():
     with open(user_data_file, "r") as file:
         return [Book(**data) for data in json.load(file)]
 
-find_filter = find_filters[0]
+find_filter: str = find_filters[0]
 value = ""
 status = ""
 
@@ -48,7 +48,7 @@ Input <|{value}|input|>
 
 def on_confirm_button_action(state):
     # Filtering the dataframe based on the input value and the filter selected by the user
-    search_df = books_df[books_df[state.find_filter] == state.value]
+    search_df = books_df[books_df[state.find_filter].astype(str).str.contains(state.value, case=False)]
 
     if search_df.empty:
         state.status = "No book found with {} = {}".format(state.find_filter, state.value)
