@@ -7,7 +7,7 @@ books_df = pd.read_csv(books_data_file)
 
 user_data_file = "../../data/data4display/user_collection.json"
 
-root_md="<|menu|label=Menu|lov={[('collection', 'collection'), ('books_list', 'books_list')]}|on_action=on_menu|>"
+root_md="<|menu|label=Menu|lov={[('collection', 'Collection'), ('books_list', 'Books List')]}|on_action=on_menu|>"
 find_filters = ["Title", "isbn", "isbn13"]
 
 class Book:
@@ -34,7 +34,7 @@ user_datas = load_user_datas()
 user_data_df = books_df[books_df["isbn"].isin([data.isbn for data in user_datas])]
 
 collection_md="""
-## Find a book
+## Add a book to your collection
 Search by <|{find_filter}|selector|lov={find_filters}|dropdown|>
 Input <|{value}|input|>
 
