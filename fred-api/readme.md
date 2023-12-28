@@ -14,6 +14,16 @@
 - Request an API key.
     - Output: 10644614d71d570b8fb28c49378b7005 
 
+### ii. Collected Data Format:
+- ouput format: json
+- converted format: csv
+> date,value
+> 2000-01-01,169.3
+> 2000-02-01,170.0
+> 2000-03-01,171.0
+> 2000-04-01,170.9
+> 2000-05-01,171.2
+
 ### ii. Parameters in the API request:
 - `realtime_start`: YYYY-MM-DD. The realtime-period will check if the data collected in the observation is true.
     - Default: today
