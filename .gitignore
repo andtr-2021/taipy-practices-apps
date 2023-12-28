@@ -3,7 +3,11 @@ logs
 node_modules
 .git
 .env
+.venv
 application.yml
 package-lock.json
 dist
 .lh
+tests
+foo_project
+poetry.lock
