@@ -1,11 +1,12 @@
 # FRED
 
-API Document: https://fred.stlouisfed.org/docs/api/fred/#API 
+`API Document`: https://fred.stlouisfed.org/docs/api/fred/#API 
 
-For this problem, we use the fred/series/observation endpoint: 
+`For this problem, we use the fred/series/observation endpoint`: 
 > - https://fred.stlouisfed.org/docs/api/fred/series_observations.html#example_json 
 
-**Definition of realtime_start and realtime_end:** 
+**[Important]** 
+`Definition of realtime_start and realtime_end:`
 > - The real-time period marks when facts were true or when information was known until it changed. Economic data sources, releases, series, and observations are all assigned a real-time period. Sources, releases, and series can change their names, and observation data values can be revised. On almost all URLs, the default real-time period is today
 
 ### i. Get API Key:
@@ -14,15 +15,15 @@ For this problem, we use the fred/series/observation endpoint:
     - Output: 10644614d71d570b8fb28c49378b7005 
 
 ### ii. Parameters in the API request:
-- realtime_start: YYYY-MM-DD. The realtime-period will check if the data collected in the observation is true.
+- `realtime_start`: YYYY-MM-DD. The realtime-period will check if the data collected in the observation is true.
     - Default: today
-- realtime_end: YYYY-MM-DD. The realtime-period will check if the data collected in the observation is true.
+- `realtime_end`: YYYY-MM-DD. The realtime-period will check if the data collected in the observation is true.
     - Default: today
-- observation_start: YYYY-MM-DD. The actual date the value exists.
-- observation_end: YYYY-MM-DD. The actual date the value exists.
-- frequency: string. The frequency of the series. 
-    - Default: all
-    - Options: 
+- `observation_start`: YYYY-MM-DD. The actual date the value exists.
+- `observation_end`: YYYY-MM-DD. The actual date the value exists.
+- `frequency`: string. The frequency of the series. 
+    - `Default`: all
+    - `Options`: 
         - daily
         - weekly
         - monthly
@@ -30,7 +31,7 @@ For this problem, we use the fred/series/observation endpoint:
         - semiannual
         - annual
         - all
-- other parameters: read about them more here - https://fred.stlouisfed.org/docs/api/fred/series_observations.html 
+- `other parameters`: read about them more here - https://fred.stlouisfed.org/docs/api/fred/series_observations.html 
 
 ### iii. Insights:
 - Each series will have a limit number of ranges such as daily, weekly, monthly, quarterly, semi-anually, and annual.
